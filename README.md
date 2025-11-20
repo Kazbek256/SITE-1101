@@ -1,4 +1,4 @@
-# Personal Website
+
 
 This is a small static personal website with pages: Home, About, Projects, Resume.
 
