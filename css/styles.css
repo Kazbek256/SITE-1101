@@ -1,0 +1,74 @@
+/* Pretty theme: blue, white and soft gray */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+:root{
+  --accent: #0b66c2; /* primary blue */
+  --accent-2: #0a58a8;
+  --bg: #e9eef5; /* slightly stronger soft gray page background (less white) */
+  --card: #e6eef8; /* slightly darker card background so sections stand out more */
+  --text: #0f1723;
+  --muted: #505960;
+  --border: #a6bfcf; /* darker border to improve contrast */
+  --card-alt: #dfe7ee; /* alternate, slightly greyer card */
+  --border-alt: #9bb9ca;
+  --radius: 10px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, 'Segoe UI', Roboto, Arial, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.header-elevated{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));}
+header{background:var(--card);backdrop-filter:blur(2px);box-shadow:0 6px 18px rgba(11,29,50,0.04);border-bottom:1px solid var(--border)}
+.nav{display:flex;gap:18px;align-items:center;padding:6px 0}
+.brand{font-weight:700;color:var(--accent);font-size:1.2rem;letter-spacing:0.2px}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;padding:6px 8px;border-radius:8px;transition:all .18s}
+.nav a:hover{background:rgba(11,102,194,0.06);color:var(--accent-2)}
+.nav .nav-toggle{display:none;background:transparent;border:0;padding:8px;cursor:pointer}
+.nav .nav-links{display:flex;gap:14px;align-items:center}
+.nav .social{display:flex;gap:10px;align-items:center}
+.nav .social a{display:inline-flex;align-items:center;color:var(--muted);text-decoration:none;border-radius:6px;padding:4px}
+.nav .social a:hover{color:var(--accent)}
+.nav .social img{display:inline-block}
+
+/* Main layout */
+.main{display:grid;grid-template-columns:1fr;gap:28px;padding:42px 0}
+.hero{display:flex;flex-direction:row;gap:28px;align-items:center}
+.profile{width:170px;height:170px;border-radius:999px;overflow:hidden;flex:0 0 170px;border:4px solid #fff;box-shadow:0 10px 30px rgba(11,102,194,0.12)}
+.profile img{width:100%;height:100%;object-fit:cover;display:block}
+.summary{flex:1}
+.summary h1{margin:0 0 10px 0;font-size:2.1rem}
+.summary p{margin:0;color:var(--muted);line-height:1.6;font-size:1rem}
+.section{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(11,29,50,0.03);border:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 4px 10px rgba(11,29,50,0.03);transition:transform .18s,box-shadow .18s;border:1px solid var(--border)}
+.projects-grid .card:nth-child(even){
+  background:var(--card-alt);
+  border-color:var(--border-alt);
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(11,29,50,0.06);border-color:rgba(10,88,168,0.12)}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+.card h3{margin:10px 0 6px 0}
+.footer{color:var(--muted);font-size:0.95rem;padding:28px 0;text-align:center;background:var(--card);border-top:1px solid var(--border)}
+
+@media (max-width:920px){
+  .container{padding:18px}
+  .main{padding:28px 0}
+  .hero{gap:18px}
+  .profile{width:150px;height:150px}
+}
+
+@media (max-width:720px){
+  .nav .nav-toggle{display:block}
+  .nav .nav-links{position:absolute;top:70px;left:0;right:0;background:var(--card);flex-direction:column;gap:0;padding:10px 14px;border-top:1px solid var(--border);display:none}
+  .nav .nav-links.open{display:flex}
+  .nav .nav-links a{padding:12px 0;border-bottom:1px solid rgba(12,18,20,0.03)}
+  .nav .social{display:none}
+  .hero{flex-direction:column;align-items:center;text-align:center}
+  .profile{width:128px;height:128px}
+}
+
+/* small utilities */
+.btn{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:10px 14px;border-radius:8px;text-decoration:none;box-shadow:0 6px 18px rgba(11,102,194,0.12);border:0}
+.muted{color:var(--muted)}
+
+/* helper for aligning social icons */
+.social img{height:20px}
